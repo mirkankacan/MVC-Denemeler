@@ -1,0 +1,21 @@
+﻿@model Futbol.Models.Futbolcu
+@{
+    Layout = null;
+}
+
+<br />
+<h2>Futbolcu Güncelleme</h2>
+<br />
+@using (Html.BeginForm("FutbolcuGuncelle", "Futbolcu", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.ID)
+        @Html.Label("Futbolcu Adı")<br />
+        @Html.TextBoxFor(x => x.FutbolcuAdı)<br />
+        @Html.Label("Futbolcu Numarası")<br />
+        @Html.TextBoxFor(x => x.FutbolcuNumarası)
+    </div>
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+    <a href="/Futbolcu/Index">Ana sayfaya dön</a>
+}

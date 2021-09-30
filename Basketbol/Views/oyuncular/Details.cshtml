@@ -1,0 +1,38 @@
+﻿@model Basketbol.Models.oyuncular
+
+@{
+    ViewBag.Title = "Details";
+}
+<center>
+    <h1>Detaylı Bilgi</h1>
+</center>
+<style>
+    table {
+        font-family: 'Lucida Sans Unicode';
+        text-align: center;
+        color: deeppink;
+        font-size: 15px;
+        font-weight: normal;
+    }
+   
+</style>
+    <hr />
+    <table align="center">
+        <tr>
+            <td>    ID'si:</td>
+            <td>  @Html.DisplayFor(model => model.ID)</td>
+        </tr>
+
+        <tr>
+            <td>     @Html.DisplayNameFor(model => model.Adı): </td>
+            <td>  @Html.DisplayFor(model => model.Adı)   </td>
+        </tr>
+
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Numarası):</td>
+            <td>@Html.DisplayFor(model => model.Numarası)</td>
+        </tr>
+
+
+
+ </table>

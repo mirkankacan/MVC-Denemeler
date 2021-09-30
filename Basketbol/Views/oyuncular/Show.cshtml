@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Basketbol.Models.oyuncular>
+
+@{
+    ViewBag.Title = "İşlem Sayfası";
+}
+
+<center>
+    <h1>İşlem Sayfası</h1>
+
+</center>
+
+<style>
+    table {
+        font-family: 'Lucida Sans Unicode';
+        text-align: center;
+        color: limegreen;
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    th {
+        color: red;
+    }
+</style>
+<hr />
+
+<table align="center">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Adı)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numarası)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Adı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numarası)
+            </td>
+            <td>
+
+
+                @Html.ActionLink("Bilgi", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+   
+
+</table>
+

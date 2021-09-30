@@ -1,0 +1,39 @@
+﻿@using Futbol.Models
+@model List<Futbolcu>
+@{
+    Layout = null;
+}
+<style>
+    th{
+        padding-left:30px
+    }
+    td {
+        padding-left: 30px
+    }
+</style>
+<table class="table table-bordered" style="margin-top:30px;">
+    <tr>
+        <th>ID</th>
+        <th>Futbolcu Adı</th>
+        <th>Futbolcu Numarası</th>
+    </tr>
+    @foreach (var f in Model)
+    {
+
+<tr>
+    <td>
+        @f.ID
+    </td>
+    <td>
+        @f.FutbolcuAdı
+    </td>
+    <td>
+        @f.FutbolcuNumarası
+    </td>
+    <td><a href="/Futbolcu/FutbolcuSil/@f.ID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Futbolcu/FutbolcuGetir/@f.ID" class="btn btn-success">Güncelle</a></td>
+</tr>
+    }
+</table>
+<br />
+<a href="/Futbolcu/FutbolcuEkle" class="btn btn-primary" style="padding-left:30px">Futbolcu Ekle</a>

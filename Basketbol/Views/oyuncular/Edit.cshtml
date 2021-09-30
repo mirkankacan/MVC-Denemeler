@@ -1,0 +1,65 @@
+﻿@model Basketbol.Models.oyuncular
+
+@{
+    ViewBag.Title = "Düzenleme İşlemleri Sayfası";
+}
+<center>
+    <h1>Düzenle</h1>
+</center>
+<style>
+    table {
+        font-family: 'Lucida Sans Unicode';
+        text-align: center;
+        color: darkorange;
+        font-size: 15px;
+        font-weight: normal;
+    }
+</style>
+<hr />
+<table align="center">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+
+
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Adı)</td>
+
+            <td>  @Html.EditorFor(model => model.Adı) </td>
+            <td>  @Html.ValidationMessageFor(model => model.Adı, "") </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Numarası)
+            </td>
+
+            <td>
+                @Html.EditorFor(model => model.Numarası)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(model => model.Numarası, "")
+            </td>
+        </tr>
+        <tr>
+
+            <td></td><td>
+                <input type="submit" value="Kaydet" class="btn btn-default" />
+            </td>
+      
+        </tr>
+    }
+
+
+</table>
+

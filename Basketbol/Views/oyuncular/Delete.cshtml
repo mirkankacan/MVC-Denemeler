@@ -1,0 +1,63 @@
+﻿@model Basketbol.Models.oyuncular
+
+@{
+    ViewBag.Title = "Silme İşlemleri Sayfası";
+}
+<style>
+    table {
+        font-family: 'Lucida Sans Unicode';
+        text-align: center;
+        color: red;
+        font-size: 15px;
+        font-weight: normal;
+    }
+</style>
+<center>
+    <h1>Sil</h1>
+    <hr>
+    <h3>Silmek istediğinize emin misiniz?</h3>
+
+</center>
+    <hr>
+  
+    <table align="center">
+        <tr>
+            <td>       ID'si:  </td>
+            <td>     @Html.DisplayFor(model => model.ID)  </td>
+
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Adı):
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.Adı)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Numarası):
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.Numarası)
+            </td>
+        </tr>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+
+    <tr>
+      <td></td>  <td>   <input type="submit" value="Sil" class="btn btn-default" /> </td>
+        
+    </tr>
+
+
+
+        }</table>
+
+
+

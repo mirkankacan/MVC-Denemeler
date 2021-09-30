@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+   
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+               <table align="center">
+                   <tr>
+                       <td style="padding-right:30px"> @Html.ActionLink("Ana Sayfa", "Index")</td>
+                       <td style="padding-right:30px"> @Html.ActionLink("Kayıtları Göster", "Show")</tdstyle="padding-right:30px">
+                       <td style="padding-right:30px"> @Html.ActionLink("Kayıt Oluştur", "Create")</tdstyle="padding-right:30px">
+                   </tr>
+               </table>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <center>
+                <p>&copy; @DateTime.Now.Year - Basketbol Veritabanı Projesi</p>
+            </center>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

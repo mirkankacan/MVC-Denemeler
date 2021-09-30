@@ -1,0 +1,19 @@
+﻿@model Futbol.Models.Futbolcu
+@{
+    Layout = null;
+}
+
+
+<h2>Futbolcu Ekle</h2>
+
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Futbolcu Adı") <br />
+    @Html.TextBoxFor(x => x.FutbolcuAdı)<br />
+    @Html.Label("Futbolcu Numarası") <br />
+    @Html.TextBoxFor(x => x.FutbolcuNumarası)
+    <br /><br />
+    <button class="btn btn-info">Kaydet</button><br />
+    <a href="Index">Ana sayfaya dön</a>
+</form>
+
